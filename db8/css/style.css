@@ -1,0 +1,353 @@
+/* Reset dasar */
+body,
+h1,
+h2,
+h3,
+ul,
+p,
+form,
+figure {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eef1f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Tata letak utama */
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* --- Sidebar Styling (NAVY THEME) --- */
+.sidebar {
+    width: 260px;
+    background-color: #001f3f;
+    color: #ffffff;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #001020;
+    transition: width 0.3s ease, padding-left 0.3s ease, padding-right 0.3s ease;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #003366;
+    flex-shrink: 0;
+}
+
+#hamburgerMenu {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 12px;
+    color: #b0c4de;
+}
+
+#hamburgerMenu:hover {
+    color: #ffffff;
+}
+
+.tab-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+.pilihan-tab {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.pilihan-tab ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pilihan-tab ul li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #d1e0ee;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.pilihan-tab ul li a:hover {
+    background-color: #003366;
+    color: #ffffff;
+    border-left: 3px solid #1e90ff;
+    padding-left: 9px;
+}
+
+.pilihan-tab ul li a.active {
+    background-color: #1e90ff;
+    color: #ffffff;
+    font-weight: 600;
+    border-left: 3px solid #ffffff;
+    padding-left: 9px;
+}
+
+/* Styling untuk Profile Mahasiswa di Sidebar */
+.sidebar .profile-mahasiswa {
+    margin-top: auto;
+    padding: 15px;
+    border-top: 1px solid #003366;
+    position: relative;
+    overflow: hidden;
+    background-color: #001025;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.sidebar .profile-mahasiswa:hover {
+    box-shadow: 0 0 15px 5px rgba(176, 196, 222, 0.5);
+}
+
+.sidebar .profile-mahasiswa::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(30, 144, 255, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(0, 80, 150, 0.6) 0%, transparent 60%),
+        radial-gradient(circle at 80% 85%, rgba(0, 20, 50, 0.5) 0%, transparent 45%),
+        #001025;
+    filter: blur(10px);
+}
+
+.sidebar .profile-mahasiswa .profile-mahasiswa-content-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.sidebar .profile-mahasiswa .profile-mahasiswa-content-link .profile-pic {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #b0c4de;
+}
+
+.sidebar .profile-mahasiswa .profile-mahasiswa-content-link .nama-mahasiswa {
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* --- Content Area Styling --- */
+.content-area {
+    flex-grow: 1;
+    padding: 25px;
+    background-color: #f9fbfd;
+    overflow-y: auto;
+}
+
+.content-area .page-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.content-area .page-header h1 {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    flex-grow: 1;
+    color: #333;
+}
+
+.hamburger-icon-header {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    display: none;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.hamburger-icon-header:hover {
+    color: #007bff;
+}
+
+/* Styling untuk formulir */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-submit {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Item laporan dinamis */
+.report-item {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.report-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+.remove-item-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 25px;
+    text-align: center;
+}
+
+.remove-item-btn:hover {
+    background-color: #ee5253;
+}
+
+.add-item-btn {
+    background-color: #5cb85c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.add-item-btn:hover {
+    background-color: #4cae4c;
+}
+
+/* Sidebar collapse */
+.sidebar.collapsed {
+    width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-right-width: 0;
+    overflow: hidden;
+}
+
+.sidebar.collapsed .profile-mahasiswa {
+    padding: 0;
+    border-top-color: transparent;
+}
